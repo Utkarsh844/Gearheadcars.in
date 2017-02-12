@@ -1,0 +1,11 @@
+Don't move any File to any other folder..may cause mismatch of 
+linking,
+
+Run with IIS.
+
+
+enjoy
+
+
+
+

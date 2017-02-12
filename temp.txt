@@ -1,0 +1,17 @@
+<%	
+	dim un,pass,rs,rd,p
+	un=request.querystring("t1")
+	pass=request.querystring("t2")
+	set rs=server.createobject("adodb.connection")
+	set rd=server.createobject("adodb.recordset")
+	rs.open "provider=Microsoft.Jet.Oledb.4.0;Data source=log.mdb;persist security info=false"
+	set rd=rs.execute("select * from log where user_name='" & un & "' And password='" & pass & "' ") 			
+	if rd.eof=true then
+		response.redirect"login2.html"		
+	
+	else
+		response.write rd("user_name") & "&nbsp;" &  "&nbsp;" & rd("password")&"<br>"
+	rd.movenext
+	end If
+	
+%>
